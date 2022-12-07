@@ -14,21 +14,21 @@ describe('Engineer', () => {
         it('should have property "github"', () => {
             const someGithub = randomWord()
             const someEngineer = new Engineer(randomWord(), randomInt(), `${randomWord()}@email.com`, someGithub)
-            expect(someEngineer.github).is(someGithub)
+            expect(someEngineer.github).toBe(someGithub)
         });
     })
 
     describe('getGithub', () => {
         it('should return the github property', () => {
             const someEngineer = randomEngineer()
-            expect(someEngineer.getGithub()).is(someEngineer.github)
+            expect(someEngineer.getGithub()).toBe(someEngineer.github)
         });
     })
 
     describe('getRole', () => {
         it('should return "Engineer"', () => {
             const someEngineer = randomEngineer()
-            expect(someEngineer.getRole()).is('Engineer')
+            expect(someEngineer.getRole()).toBe('Engineer')
         })
     })
 })

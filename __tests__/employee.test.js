@@ -11,9 +11,9 @@ describe('Employee', () => {
             const someEmail = `${randomWord()}@email.com`
             const someEmployee = new Employee(someName, someId, someEmail)
 
-            expect(someEmployee.name).is(someName)
-            expect(someEmployee.id).is(someId)
-            expect(someEmployee.email).is(someEmail)
+            expect(someEmployee.name).toBe(someName)
+            expect(someEmployee.id).toBe(someId)
+            expect(someEmployee.email).toBe(someEmail)
         })
     })
     
@@ -21,7 +21,7 @@ describe('Employee', () => {
         it("should return the name property", () => {
             const someEmployee = randomEmployee()
 
-            expect(someEmployee.getName()).is(someEmployee.name)
+            expect(someEmployee.getName()).toBe(someEmployee.name)
         })
     })
 
@@ -29,7 +29,7 @@ describe('Employee', () => {
         it("should return the ID property", () => {
             const someEmployee = randomEmployee()
 
-            expect(someEmployee.getId()).is(someEmployee.id)
+            expect(someEmployee.getId()).toBe(someEmployee.id)
         })
     })
 
@@ -37,7 +37,7 @@ describe('Employee', () => {
         it('should return the email property', () => {
             const someEmployee = randomEmployee()
 
-            expect(someEmployee.getEmail()).is(someEmployee.email)
+            expect(someEmployee.getEmail()).toBe(someEmployee.email)
         });
     })
 
@@ -45,7 +45,7 @@ describe('Employee', () => {
         it('should return "Employee"', () => {
             const someEmployee = randomEmployee()
             
-            expect(someEmployee.getRole()).is('Employee')
+            expect(someEmployee.getRole()).toBe('Employee')
         });
     })
 })

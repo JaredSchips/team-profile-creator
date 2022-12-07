@@ -14,21 +14,21 @@ describe('Intern', () => {
         it('should have property "school"', () => {
             const someSchool = randomWord()
             const someIntern = new Intern(randomWord(), randomInt(), `${randomWord()}@email.com`, someSchool)
-            expect(someIntern.school).is(someSchool)
+            expect(someIntern.school).toBe(someSchool)
         });
     })
 
     describe('getSchool', () => {
         it('should return the school property', () => {
             const someIntern = randomIntern()
-            expect(someIntern.getSchool()).is(someIntern.school)
+            expect(someIntern.getSchool()).toBe(someIntern.school)
         });
     })
 
     describe('getRole', () => {
         it('should return "Intern"', () => {
             const someIntern = randomIntern()
-            expect(someIntern.getRole()).is('Intern')
+            expect(someIntern.getRole()).toBe('Intern')
         })
     })
 })

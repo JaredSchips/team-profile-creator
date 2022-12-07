@@ -14,21 +14,21 @@ describe('Manager', () => {
         it('should have property "officeNumber"', () => {
             const someOfficeNumber = randomInt()
             const someManager = new Manager(randomWord(), randomInt(), `${randomWord()}@email.com`, someOfficeNumber)
-            expect(someManager.officeNumber).is(someOfficeNumber)
+            expect(someManager.officeNumber).toBe(someOfficeNumber)
         });
     })
 
     describe('getOfficeNumber', () => {
         it('should return the officeNumber property', () => {
             const someManager = randomManager()
-            expect(someManager.getOfficeNumber()).is(someManager.officeNumber)
+            expect(someManager.getOfficeNumber()).toBe(someManager.officeNumber)
         });
     })
 
     describe('getRole', () => {
         it('should return "Manager"', () => {
             const someManager = randomManager()
-            expect(someManager.getRole()).is('Manager')
+            expect(someManager.getRole()).toBe('Manager')
         })
     })
 })
