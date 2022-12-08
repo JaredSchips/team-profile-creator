@@ -19,7 +19,8 @@ function getThirdItem(employee) {
 
 function createEmployeeCard(employee) {
     let {thirdItemName, thirdItemValue} = getThirdItem(employee)
-    return `      <div class="card col-4">
+    return `
+      <div class="card col-4">
         <h5 class="card-header text-center">${employee.getName()}</h5>
         <div class="card-body">
           <h5 class="card-title text-center">${employee.getRole()}</h5>
@@ -37,7 +38,7 @@ function addEmployeeCard(employee) {
     let html = fs.readFileSync('./dist/profiles.html', encoding='utf8')
     html = html.split('</main>')
     html[0] += createEmployeeCard(employee)
-    html = html.join('</main>')
+    html = html.join(`    </main>`)
     fs.writeFileSync('./dist/profiles.html', html)
 }
 
