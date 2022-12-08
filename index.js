@@ -1,4 +1,8 @@
 const inquirer = require("inquirer");
+const addEmployeeCard = require('./src/utils')
+const Manager = require('./lib/manager')
+const Engineer = require('./lib/engineer')
+const Intern = require('./lib/intern')
 
 inquirer.prompt([
     {
@@ -22,6 +26,8 @@ inquirer.prompt([
         message: "What is the team manager's office number?"
     },
 ]).then( managerInfo => {
+    let {managerName, managerId, managerEmail, managerOfficeNumber} = managerInfo
+    addEmployeeCard(new Manager(managerName, managerId, managerEmail, managerOfficeNumber))
     const otherInfo = menu()
 })
 
@@ -60,6 +66,8 @@ function menu(choice='') {
                     message: "What is the engineer's github username?"
                 },
             ]).then(answers => {
+                let {engineerName, engineerId, engineerEmail, engineerGithub} = answers
+                addEmployeeCard(new Engineer(engineerName, engineerId, engineerEmail, engineerGithub))
                 menu()
             })
         }
@@ -87,6 +95,8 @@ function menu(choice='') {
                     message: "What is the intern's school name?"
                 },
             ]).then(answers => {
+                let {internName, internId, internEmail, internGithub} = answers
+                addEmployeeCard(new Intern(internName, internId, internEmail, internGithub))
                 menu()
             })
         }
