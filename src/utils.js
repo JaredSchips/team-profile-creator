@@ -13,9 +13,10 @@ const templatePage = `<!doctype html>
   <body>
     <header>
       <h1 class="display-1 text-center">My Team</h1>
+      <hr>
     </header>
 
-    <main class="container d-flex justify-content-center flex-wrap gap-4"></main>
+    <main class="container d-flex justify-content-center flex-wrap gap-4 mb-4"></main>
   </body>
 </html>`
 
@@ -43,9 +44,9 @@ function getThirdItem(employee) {
 function createEmployeeCard(employee) {
     let {thirdItemName, thirdItemValue} = getThirdItem(employee)
     return `
-      <div class="card col-4">
-        <h5 class="card-header text-center">${employee.getName()}</h5>
-        <div class="card-body">
+      <div class="card col-4" style="min-width: 200px">
+        <h5 class="card-header text-center text-bg-primary">${employee.getName()}</h5>
+        <div class="card-body text-bg-light">
           <h5 class="card-title text-center">${employee.getRole()}</h5>
           <ul class="list-group">
             <li class="list-group-item">ID: ${employee.getId()}</li>
