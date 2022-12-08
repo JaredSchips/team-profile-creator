@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const addEmployeeCard = require('./src/utils')
+const { resetHTML, addEmployeeCard } = require('./src/utils')
 const Manager = require('./lib/manager')
 const Engineer = require('./lib/engineer')
 const Intern = require('./lib/intern')
@@ -26,6 +26,8 @@ inquirer.prompt([
         message: "What is the team manager's office number?"
     },
 ]).then( managerInfo => {
+    resetHTML()
+
     let {managerName, managerId, managerEmail, managerOfficeNumber} = managerInfo
     addEmployeeCard(new Manager(managerName, managerId, managerEmail, managerOfficeNumber))
     const otherInfo = menu()
